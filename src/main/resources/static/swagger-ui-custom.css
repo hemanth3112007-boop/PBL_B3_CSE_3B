@@ -1,0 +1,46 @@
+/* ==============================================================================
+   SkillLoop AI - Swagger UI Custom Styling
+   Enforces crisp black text color throughout the API documentation
+   ============================================================================== */
+
+body,
+.swagger-ui,
+.swagger-ui .info .title,
+.swagger-ui .info p,
+.swagger-ui .info li,
+.swagger-ui .opblock-tag,
+.swagger-ui .opblock-summary-path,
+.swagger-ui .opblock-summary-description,
+.swagger-ui .opblock-description-wrapper p,
+.swagger-ui table,
+.swagger-ui table thead tr th,
+.swagger-ui table thead tr td,
+.swagger-ui .parameter__name,
+.swagger-ui .parameter__type,
+.swagger-ui .parameter__in,
+.swagger-ui .response-col_status,
+.swagger-ui .response-col_description,
+.swagger-ui .response-col_links,
+.swagger-ui .renderedMarkdown p,
+.swagger-ui .model-title,
+.swagger-ui .model-box,
+.swagger-ui .prop-type,
+.swagger-ui .prop-format,
+.swagger-ui pre,
+.swagger-ui code,
+.swagger-ui .responses-inner h4,
+.swagger-ui .responses-inner h5,
+.swagger-ui label,
+.swagger-ui select,
+.swagger-ui input[type=text],
+.swagger-ui textarea {
+    color: #000000 !important;
+}
+
+.swagger-ui .topbar {
+    background-color: #111827 !important;
+}
+
+.swagger-ui .opblock-tag {
+    border-bottom: 1px solid #e5e7eb !important;
+}

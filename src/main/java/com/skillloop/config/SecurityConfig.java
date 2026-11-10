@@ -44,8 +44,22 @@ public class SecurityConfig {
                         })
                 )
                 .authorizeHttpRequests(auth -> auth
-                        // Whitelisted explicitly intended public endpoints only
+                        // Whitelisted explicitly intended public endpoints and static frontend assets
                         .requestMatchers(
+                                "/",
+                                "/index.html",
+                                "/skyline",
+                                "/portfolio",
+                                "/gap-engine",
+                                "/sheet-tracker",
+                                "/jd-matcher",
+                                "/assets/**",
+                                "/*.png",
+                                "/*.ico",
+                                "/*.svg",
+                                "/*.jpg",
+                                "/*.json",
+                                "/*.mp4",
                                 "/api/auth/**",
                                 "/api/certifications/verify/**",
                                 "/api-docs/**",

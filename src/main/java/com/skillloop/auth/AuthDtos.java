@@ -1,5 +1,6 @@
 package com.skillloop.auth;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -8,6 +9,7 @@ import jakarta.validation.constraints.Size;
 public class AuthDtos {
 
     public static class LoginRequest {
+        @JsonAlias({"username", "email"})
         @NotBlank(message = "Username or email is required")
         private String usernameOrEmail;
 
@@ -27,6 +29,12 @@ public class AuthDtos {
 
         public void setUsernameOrEmail(String usernameOrEmail) {
             this.usernameOrEmail = usernameOrEmail;
+        }
+
+        public void setUsername(String username) {
+            if (this.usernameOrEmail == null || this.usernameOrEmail.isBlank()) {
+                this.usernameOrEmail = username;
+            }
         }
 
         public String getPassword() {

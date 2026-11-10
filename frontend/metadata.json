@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix DeltaSpec - Developer Skill-Gap Telemetry Engine",
+  "description": "High-density developer portfolio and automated employment skill-gap analysis engine with real-time market benchmark telemetry.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

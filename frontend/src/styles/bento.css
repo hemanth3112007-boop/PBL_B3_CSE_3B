@@ -1,0 +1,159 @@
+/* Bento Grid Layout System */
+.bento-container {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 14px;
+}
+
+/* Card Surface base */
+.bento-card {
+  background-color: var(--card-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.bento-card:hover {
+  border-color: var(--border-strong);
+}
+
+.bento-card-interactive:hover {
+  background-color: var(--surface-elevated);
+  border-color: var(--border-strong);
+}
+
+/* Header strip within bento cards */
+.bento-card-header {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border-subtle);
+  background-color: rgba(24, 27, 36, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bento-card-body {
+  padding: 14px;
+}
+
+/* High-contrast status badges */
+.badge-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.badge-critical {
+  background-color: rgba(244, 63, 94, 0.12);
+  color: #FB7185;
+  border: 1px solid rgba(244, 63, 94, 0.35);
+}
+
+.badge-partial {
+  background-color: rgba(96, 165, 250, 0.12);
+  color: #60A5FA;
+  border: 1px solid rgba(96, 165, 250, 0.35);
+}
+
+.badge-surplus {
+  background-color: rgba(56, 189, 248, 0.12);
+  color: #38BDF8;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+}
+
+.badge-telemetry {
+  background-color: rgba(6, 182, 212, 0.12);
+  color: #22D3EE;
+  border: 1px solid rgba(6, 182, 212, 0.35);
+}
+
+.badge-neutral {
+  background-color: rgba(138, 148, 166, 0.12);
+  color: #D1D5DB;
+  border: 1px solid rgba(138, 148, 166, 0.25);
+}
+
+/* Micro pulse indicator */
+.pulse-indicator {
+  position: relative;
+  display: inline-flex;
+  width: 8px;
+  height: 8px;
+}
+
+.pulse-indicator::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background-color: currentColor;
+  opacity: 0.75;
+  animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.pulse-indicator::after {
+  content: '';
+  position: relative;
+  display: inline-flex;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background-color: currentColor;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.9); opacity: 0; }
+  100% { transform: scale(0.95); opacity: 0; }
+}
+
+/* Heatmap Grid Cell Styles */
+.heatmap-cell {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  transition: transform 0.1s ease, filter 0.1s ease;
+}
+
+.heatmap-cell:hover {
+  transform: scale(1.35);
+  z-index: 10;
+  filter: brightness(1.2);
+}
+
+/* Interactive Checkbox styling */
+.custom-checkbox {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #2E3447;
+  border-radius: 3px;
+  background-color: #11131A;
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+  transition: all 0.15s ease;
+}
+
+.custom-checkbox:checked {
+  background-color: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+}
+
+.custom-checkbox:checked::before {
+  content: "";
+  width: 8px;
+  height: 5px;
+  border-left: 2px solid #090A0F;
+  border-bottom: 2px solid #090A0F;
+  transform: rotate(-45deg) translate(1px, -1px);
+}
